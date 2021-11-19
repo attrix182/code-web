@@ -1,8 +1,7 @@
 import { LitElement, html, css } from 'lit';
-import { property } from 'lit/decorators.js';
+import { property, customElement } from 'lit/decorators.js';
 
-const logo = new URL('../../assets/open-wc-logo.svg', import.meta.url).href;
-
+@customElement('main-codeweb')
 export class MainCodeweb extends LitElement {
   @property({ type: String }) code = '';
 

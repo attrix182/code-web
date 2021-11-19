@@ -14,7 +14,10 @@
     "sourceMap": true,
     "inlineSources": true,
     "rootDir": "./",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "tslib" : ["/node_modules/tslib/tslib.d.ts"]
+    },
   },
   "include": ["**/*.ts"]
 }
