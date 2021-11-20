@@ -1,3 +1,3 @@
 import { MainCodeweb } from './MainCodeweb.js';
 
-customElements.define('main-codeweb', MainCodeweb);
+customElements.get('main-codeweb') || customElements.define('main-codeweb', MainCodeweb) ;
