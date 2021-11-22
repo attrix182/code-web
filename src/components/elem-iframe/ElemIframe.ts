@@ -28,8 +28,9 @@ export class ElemIframe extends LitElement {
 
       this.generateFullCode();
 
-    return html` <main>
-    <h3>IFRAME</h3>
+    return html` 
+    <main>
+    <hr>
       <iframe srcdoc="${this.fullCode}" frameborder="0"></iframe>
     </main>`;
   }
