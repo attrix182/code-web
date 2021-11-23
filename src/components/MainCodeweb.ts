@@ -41,12 +41,11 @@ export class MainCodeweb extends LitElement {
     return html` <main>
       <div class="editor">
 
+        <textarea spellcheck="false" id="html" @input=${this.getHtml} cols="30" rows="10" placeholder="HTML"></textarea>
 
-        <textarea id="html" @input=${this.getHtml} cols="30" rows="10" placeholder="HTML"></textarea>
+        <textarea spellcheck="false" id="css" @input=${this.getCss} cols="30" rows="10" placeholder="CSS"></textarea>
 
-        <textarea id="css" @input=${this.getCss} cols="30" rows="10" placeholder="CSS"></textarea>
-
-        <textarea id="js" @input=${this.getJs} cols="30" rows="10" placeholder="JS"></textarea>
+        <textarea spellcheck="false" id="js" @input=${this.getJs} cols="30" rows="10" placeholder="JS"></textarea>
       </div>
 
       <elem-iframe html=${this.html} css=${this.css} js=${this.js}></elem-iframe>
