@@ -5,27 +5,31 @@ import { property, customElement } from 'lit/decorators.js';
 export class MainCodeweb extends LitElement {
   static styles = css`
     .editor {
+      padding-top: 1%;
+      padding-bottom: 1%;
       display: flex;
       flex-direction: col;
-      flex-wrap: wrap;
+
       justify-content: center;
       align-items: center;
+
+      background-color: #0d1117;
     }
 
     textarea {
-      color: #fff;
-      background-color: rgba(44, 44, 50, 0.9);
-      box-shadow: 0 8px 10px 0 rgba(31, 38, 135, 0.37);
-      backdrop-filter: blur(11.5px);
-      -webkit-backdrop-filter: blur(11.5px);
-      border-radius: 10px;
+      color: #fff !important;
+      background-color: rgba(44, 44, 50, 0.9) !important;
+      box-shadow: 0 8px 10px 0 rgba(180, 200, 200, 0.15) !important;
+      backdrop-filter: blur(11.5px) !important;
+      -webkit-backdrop-filter: blur(11.5px) !important;
+      border-radius: 10px !important;
 
-      padding: 10px;
-      font-size: 16px;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 300;
-      line-height: 1.5;
-      overflow: auto;
+      padding: 10px !important;
+      font-size: 16px !important;
+      font-family: 'Roboto', sans-serif !important;
+      font-weight: 300 !important;
+      line-height: 1.5 !important;
+      overflow: auto !important;
     }
 
     textarea:focus {
@@ -39,19 +43,23 @@ export class MainCodeweb extends LitElement {
 
   render() {
     return html` <main>
-      <div class="editor">
+  
+     
+    <div class="editor container-fluid">
 
-        <textarea spellcheck="false" id="html" @input=${this.getHtml} cols="30" rows="10" placeholder="HTML"></textarea>
+        <textarea class="form-control"spellcheck="false" id="html" @input=${this.getHtml} cols="30" rows="10" placeholder="HTML"></textarea>
 
-        <textarea spellcheck="false" id="css" @input=${this.getCss} cols="30" rows="10" placeholder="CSS"></textarea>
+        <textarea class="form-control"spellcheck="false" id="css" @input=${this.getCss} cols="30" rows="10" placeholder="CSS"></textarea>
 
-        <textarea spellcheck="false" id="js" @input=${this.getJs} cols="30" rows="10" placeholder="JS"></textarea>
+        <textarea class="form-control"spellcheck="false" id="js" @input=${this.getJs} cols="30" rows="10" placeholder="JS"></textarea>
       </div>
+      <hr>
 
-      <elem-iframe html=${this.html} css=${this.css} js=${this.js}></elem-iframe>
+      <div class="container-fluid">
+      <elem-iframe class="frame" html=${this.html} css=${this.css} js=${this.js}></elem-iframe>
+      </div>
     </main>`;
   }
-
 
   getHtml(event: Event) {
     const input = event.target as HTMLInputElement;

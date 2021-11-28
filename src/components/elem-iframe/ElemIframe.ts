@@ -4,6 +4,14 @@ import { property, customElement } from 'lit/decorators.js';
 
 @customElement('elem-iframe')
 export class ElemIframe extends LitElement {
+  static styles = css`
+
+
+  iframe{
+    width: 1280px;
+    height: 720px;
+  }
+`;
   @property({ type: String }) html = '';
   @property({ type: String }) css = '';
   @property({ type: String }) js = '';
@@ -30,7 +38,7 @@ export class ElemIframe extends LitElement {
 
     return html` 
     <main>
-    <hr>
+
       <iframe srcdoc="${this.fullCode}" frameborder="0"></iframe>
     </main>`;
   }
