@@ -9,7 +9,6 @@ export class MainCodeweb extends LitElement {
       padding-bottom: 1%;
       display: flex;
       flex-direction: col;
-
       justify-content: center;
       align-items: center;
 
@@ -35,6 +34,8 @@ export class MainCodeweb extends LitElement {
     textarea:focus {
       outline: none;
     }
+
+
   `;
 
   @property({ type: String }) html = '';
@@ -43,24 +44,68 @@ export class MainCodeweb extends LitElement {
 
   render() {
     return html` <main>
-  
-     
-    <div class="editor container-fluid">
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+      />
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+      ></script>
 
-        <textarea class="form-control"spellcheck="false" id="html" @input=${this.getHtml} cols="30" rows="10" placeholder="HTML"></textarea>
 
-        <textarea class="form-control"spellcheck="false" id="css" @input=${this.getCss} cols="30" rows="10" placeholder="CSS"></textarea>
 
-        <textarea class="form-control"spellcheck="false" id="js" @input=${this.getJs} cols="30" rows="10" placeholder="JS"></textarea>
+      <div class="editor container-fluid">
+        <textarea
+          class="form-control"
+          spellcheck="false"
+          id="html"
+          @input=${this.getHtml}
+          cols="30"
+          rows="10"
+          placeholder="HTML"
+        ></textarea>
+
+        <textarea
+          class="form-control"
+          spellcheck="false"
+          id="css"
+          @input=${this.getCss}
+          cols="30"
+          rows="10"
+          placeholder="CSS"
+        ></textarea>
+
+        <textarea
+          class="form-control"
+          spellcheck="false"
+          id="js"
+          @input=${this.getJs}
+          cols="30"
+          rows="10"
+          placeholder="JS"
+        ></textarea>
+        
       </div>
-      <hr>
-
+      <hr/>
       <div class="container-fluid">
-      <elem-iframe class="frame" html=${this.html} css=${this.css} js=${this.js}></elem-iframe>
+        <elem-iframe class="frame" html=${this.html} css=${this.css} js=${this.js}></elem-iframe>
       </div>
     </main>`;
   }
-
   getHtml(event: Event) {
     const input = event.target as HTMLInputElement;
     this.html = input.value;

@@ -21,7 +21,7 @@ package-lock.json
 # build
 /_site/
 /dist/
-/out-tsc/
+/out-TS/
 
 storybook-static
 custom-elements.json

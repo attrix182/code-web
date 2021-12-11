@@ -5,8 +5,6 @@ import { property, customElement } from 'lit/decorators.js';
 @customElement('elem-iframe')
 export class ElemIframe extends LitElement {
   static styles = css`
-
-
   iframe{
     width: 1280px;
     height: 720px;
