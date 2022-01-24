@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
+
 @customElement('main-codeweb')
 export class MainCodeweb extends LitElement {
   static styles = css`
@@ -11,7 +12,6 @@ export class MainCodeweb extends LitElement {
       flex-direction: col;
       justify-content: center;
       align-items: center;
-
       background-color: #0d1117;
     }
 
@@ -34,10 +34,7 @@ export class MainCodeweb extends LitElement {
     textarea:focus {
       outline: none;
     }
-
-
   `;
-
   @property({ type: String }) html = '';
   @property({ type: String }) css = '';
   @property({ type: String }) js = '';
@@ -65,8 +62,6 @@ export class MainCodeweb extends LitElement {
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"
       ></script>
-
-
 
       <div class="editor container-fluid">
         <textarea
@@ -98,17 +93,18 @@ export class MainCodeweb extends LitElement {
           rows="10"
           placeholder="JS"
         ></textarea>
-        
       </div>
-      <hr/>
+      <hr />
       <div class="container-fluid">
         <elem-iframe class="frame" html=${this.html} css=${this.css} js=${this.js}></elem-iframe>
       </div>
+
     </main>`;
   }
   getHtml(event: Event) {
     const input = event.target as HTMLInputElement;
     this.html = input.value;
+    console.log("test 1")
   }
 
   getJs(event: Event) {

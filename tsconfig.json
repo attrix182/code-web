@@ -15,6 +15,7 @@
     "inlineSources": true,
     "rootDir": "./",
     "incremental": true,
+    "noImplicitAny": false,
     "paths": {
       "tslib" : ["/node_modules/tslib/tslib.d.ts"]
     },
